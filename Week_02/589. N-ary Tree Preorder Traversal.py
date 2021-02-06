@@ -7,19 +7,20 @@ class Node:
 """
 
 class Solution:
-    def postorder(self, root: 'Node') -> List[int]:
+    def preorder(self, root: 'Node') -> List[int]:
         """
         递归
 
-        T: O(N)
+        T: O(n)
         S: O(h)
         """
+
         res = []
         def dfs(root):
             if not root:
                 return
+            res.append(root.val)
             for child in root.children:
                 dfs(child)
-            res.append(root.val)
         dfs(root)
         return res
