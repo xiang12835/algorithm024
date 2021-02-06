@@ -23,3 +23,15 @@ class Solution:
             res.append(root.val)
         dfs(root)
         return res
+    
+
+    res = []
+        def helper(root):
+            if not root:
+                return
+            res.append(root.val)
+            for child in root.children:
+                helper(child)
+        helper(root)
+        return res
+
