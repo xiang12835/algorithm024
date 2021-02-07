@@ -1,3 +1,20 @@
+class Solution(object):
+    def addDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+
+        将数字转成字符串，在求和
+
+        """
+        ss = str(num)
+        while (len(ss) > 1):
+            tmp = 0
+            for c in ss:
+                tmp += int(c)
+            ss = str(tmp)
+        return int(ss)
+
 class Solution:
     def addDigits(self, num: int) -> int:
         """
@@ -10,3 +27,4 @@ class Solution:
             return num
         else:
             return num
+
