@@ -3,6 +3,11 @@ class Solution(object):
         """
         :type n: int
         :rtype: List[List[str]]
+
+        回溯
+        
+        时间复杂度：O(N!)
+        空间复杂度：O(N)
         """
         if n < 1:
             return []
