@@ -23,10 +23,10 @@ class Solution1(object):
     """
     def subsets(self, nums: List[int]) -> List[List[int]]:
         self.res = []
-        self.backtrack([], 0, nums)
+        self._recursion([], 0, nums)
         return self.res
 
-    def backtrack(self, l, index, nums):
+    def _recursion(self, l, index, nums):
 
         # terminator
         if index == len(nums):
@@ -34,9 +34,9 @@ class Solution1(object):
             return
 
         # pick the number at this index
-        self.backtrack(l + [nums[index]], index + 1, nums)
+        self._recursion(l + [nums[index]], index + 1, nums)
 
         # not pick the number at this index
-        self.backtrack(l, index + 1, nums)
+        self._recursion(l, index + 1, nums)
 
         # reverse the current state
