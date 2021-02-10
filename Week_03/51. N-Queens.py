@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: List[List[str]]
 
         回溯
-        
+
         时间复杂度：O(N!)
         空间复杂度：O(N)
         """
@@ -19,11 +19,11 @@ class Solution(object):
         self.pie = set()
         self.na = set()
         
-        self.dfs(n, 0, [])
+        self.backtrack(n, 0, [])
         
         return self.gen_result(n)
     
-    def dfs(self, n, row, cur_state):
+    def backtrack(self, n, row, cur_state):
         # recursion terminator
         if row >= n:
             self.result.append(cur_state)
@@ -40,7 +40,7 @@ class Solution(object):
             self.pie.add(row + col)
             self.na.add(row - col)
             
-            self.dfs(n, row + 1, cur_state + [col])
+            self.backtrack(n, row + 1, cur_state + [col])
         
             # remove flags
             self.cols.remove(col)
