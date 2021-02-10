@@ -12,3 +12,31 @@ class Solution:
 
             results.extend(l)
         return results
+
+class Solution1(object):
+
+    """
+    1.全部考虑，选或不选
+
+    1选或不选，有两种情况，2选或不选，有两种情况，3选或不选，有两种情况，那么总共就是2\*2\*2=8种情况：
+
+    """
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        self.res = []
+        self.backtrack([], 0, nums)
+        return self.res
+
+    def backtrack(self, l, index, nums):
+
+        # terminator
+        if index == len(nums):
+            self.res.append(l)
+            return
+
+        # pick the number at this index
+        self.backtrack(l + [nums[index]], index + 1, nums)
+
+        # not pick the number at this index
+        self.backtrack(l, index + 1, nums)
+
+        # reverse the current state
