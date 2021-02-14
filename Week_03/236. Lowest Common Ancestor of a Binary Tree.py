@@ -7,6 +7,12 @@
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        """
+        递归
+        
+        时间复杂度：O(N)
+        空间复杂度：O(N)
+        """
         if not root:
             return root
         # 边界条件，如果匹配到left或right就直接返回停止递归
