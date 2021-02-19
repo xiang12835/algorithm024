@@ -6,6 +6,9 @@ class Solution:
         T: O(x)
         S: O(1)
         """
+        if x == 0:
+            return 0
+            
         l = 1
         r = x
         while l <= r:
@@ -17,4 +20,5 @@ class Solution:
             else:
                 l = mid + 1
         return r # 当无整数平方根时，取小值
+        
         
