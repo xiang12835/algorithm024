@@ -1,7 +1,7 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
         """
-        dp 
+        dp 自顶向下
 
         T: O(mn)
         S: O(mn)
@@ -17,10 +17,10 @@ class Solution:
         return dp[-1][-1]
 
 
-class Solution:
+class Solution1:
     def uniquePaths(self, m: int, n: int) -> int:
         """
-        dp 
+        dp 自底向上
 
         T: O(mn)
         S: O(mn)
