@@ -8,6 +8,9 @@ class Solution:
         三路快速排序方法
 
         设置三个 l, r, i 定义：nums[0...l] == 0，nums[l+1...i-1] = 1，nums[r...n-1] == 2，遍历一遍改数列保持这个定义。
+
+        T: O(N)
+        S: O(1)
         """
         
         left = -1
