@@ -37,9 +37,10 @@ class Solution:
 class Solution:
     def rob(self, nums: List[int]) -> int:
         """
-        DP
-
-        法二：降维
+        法二：
+        
+        DP + 降维
+        
         dp[i] = max(dp[i-1], nums[i] + dp[i-2])
 
         T: O(N)
@@ -70,7 +71,7 @@ class Solution(object):
 
         法三：
 
-        优化空间
+        DP + 优化空间
 
         dp[i] = max(dp[i-1], nums[i] + dp[i-2])
 
