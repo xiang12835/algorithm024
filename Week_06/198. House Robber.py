@@ -1,9 +1,48 @@
-class Solution:
+class Solution1:
     def rob(self, nums: List[int]) -> int:
         """
         法一：
 
         DP + 升维
+
+        1. subproblems
+        2. dp array
+
+        a[i][0,1]: 0 … i 能偷到 max value 0: 不偷 1: 偷
+
+        3. dp equation
+        
+        a[i][0] = max(a[i-1][0], a[i-1][1])
+        a[i][1] = a[i-1][0] + nums[i]
+
+        T: O(N)
+        S: O(N)
+        """
+        if not nums:
+            return 0
+
+        n = len(nums)
+
+        # 初始化 dp
+        dp = [[0]*2 for _ in range(n)]
+        dp[0][0] = 0
+        dp[0][1] = nums[0]
+        
+        for i in range(1, n):
+            dp[i][0] = max(dp[i-1][0], dp[i-1][1])
+            dp[i][1] = dp[i-1][0] + nums[i]
+        
+        return max(dp[n-1][0], dp[n-1][1])
+
+
+class Solution2:
+    def rob(self, nums: List[int]) -> int:
+        """
+        法二：
+
+        DP + 降维
+
+        使用两个一维的dp方程
 
         1. subproblems
         2. dp array
@@ -33,14 +72,15 @@ class Solution:
         return max(dp0[n-1], dp1[n-1])
 
 
-
-class Solution:
+class Solution3:
     def rob(self, nums: List[int]) -> int:
         """
-        法二：
+        法三：
         
         DP + 降维
-        
+
+        使用一个一维dp方程，优化dp方程
+
         dp[i] = max(dp[i-1], nums[i] + dp[i-2])
 
         T: O(N)
@@ -63,13 +103,13 @@ class Solution:
         return dp[n-1]
 
 
-class Solution(object):
+class Solution4(object):
     def rob(self, nums):
         """
         :type nums: List[int]
         :rtype: int
 
-        法三：
+        法四：
 
         DP + 优化空间
 
