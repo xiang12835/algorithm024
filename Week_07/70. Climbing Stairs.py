@@ -86,7 +86,7 @@ class Solution4(object):
         :type n: int
         :rtype: int
 
-        DP
+        法四：DP + 优化空间
 
         T: O(n)
         S: O(1)
