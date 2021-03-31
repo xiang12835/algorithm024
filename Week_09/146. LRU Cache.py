@@ -2,6 +2,7 @@ import collections
 class LRUCache(object):
     """
     双向链表中，在后面的节点表示被最近访问
+    在 Python 语言中，有一种结合了哈希表与双向链表的数据结构 OrderedDict
     """
     def __init__(self, capacity):
         """
