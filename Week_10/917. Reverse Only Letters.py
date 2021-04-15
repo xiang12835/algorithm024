@@ -21,3 +21,23 @@ class Solution(object):
             l += 1
             r -= 1
         return ''.join(letters)
+
+class Solution(object):
+    def reverseOnlyLetters(self, S):
+        """
+        :type S: str
+        :rtype: str
+
+        字母栈
+
+        T: O(n)
+        S: O(n)
+        """
+        r = [] 
+        stack = [c for c in S if c.isalpha()] # 字母栈
+        for c in S:
+            if c.isalpha():
+                r.append(stack.pop())
+            else:
+                r.append(c)
+        return ''.join(r)
