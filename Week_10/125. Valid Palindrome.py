@@ -1,5 +1,12 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
+
+        ss = ''.join(c for c in s.lower() if c.isalnum())
+        return ss[::-1] == ss
+
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
         """
         双指针 - 左右夹逼
 
@@ -22,10 +29,4 @@ class Solution:
                 r -= 1
         return True
 
-
-class Solution1:
-    def isPalindrome(self, s: str) -> bool:
-
-        ss = ''.join(c for c in s.lower() if c.isalnum())
-        return ss[::-1] == ss
 
