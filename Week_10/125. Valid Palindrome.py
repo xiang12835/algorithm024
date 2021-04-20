@@ -1,6 +1,8 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         """
+        双指针 - 左右夹逼
+
         T：O(|s|)，其中 |s| 是字符串 s 的长度。
         S：O(1)。
         """
