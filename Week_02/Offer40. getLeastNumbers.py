@@ -24,7 +24,7 @@ class Solution1:
         if k == 0:
             return []
 
-        hp = [-x for x in arr[:k]]  # Python 语言中的对为小根堆，因此我们要对数组中所有的数取其相反数，才能使用小根堆维护前 k 小值
+        hp = [-x for x in arr[:k]]  # Python 语言中的默认为小根堆，因此我们要对数组中所有的数取其相反数，才能使用小根堆维护前 k 小值
         heapq.heapify(hp)  # 堆化
         for i in range(k, len(arr)):
             if arr[i] < -hp[0]:  # 如果当前遍历到的数比大根堆的堆顶的数要小
