@@ -20,6 +20,8 @@ class Solution1:
 
         法二：去构建一个大顶堆，然后去删除k次，取k个最大值
 
+        Python的heapq默认是小根堆
+
         T: O(nlogn)
         S: O(n)
         """
