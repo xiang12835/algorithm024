@@ -80,8 +80,8 @@ class Solution(object):
         """
         start, end = 0, 0
         for i in range(len(s)):
-            left1, right1 = self.expandAroundCenter(s, i, i) # 奇数
-            left2, right2 = self.expandAroundCenter(s, i, i + 1) # 偶数
+            left1, right1 = self.expandAroundCenter(s, i, i) # 奇数，以当前字符为中心的最长回文子串
+            left2, right2 = self.expandAroundCenter(s, i, i + 1) # 偶数，以当前字符和下一字符为中心的最长回文子串
             if right1 - left1 > end - start:
                 start, end = left1, right1
             if right2 - left2 > end - start:
