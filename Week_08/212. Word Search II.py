@@ -32,11 +32,11 @@ class Solution(object):
         for i in xrange(self.row):
             for j in xrange(self.col):
                 if board[i][j] in root:
-                    self.dfs(board, i, j, '', root)
+                    self.backtrack(board, i, j, '', root)
 
         return list(self.result)
 
-    def dfs(self, board, i, j, cur_word, cur_dict):
+    def backtrack(self, board, i, j, cur_word, cur_dict):
         cur_word += board[i][j]
         cur_dict = cur_dict[board[i][j]]
 
@@ -47,5 +47,5 @@ class Solution(object):
         for k in xrange(4):
             x, y = i + self.dx[k], j + self.dy[k]
             if 0 <= x < self.row and 0 <= y < self.col and board[x][y] != '@' and board[x][y] in cur_dict:
-                self.dfs(board, x, y, cur_word, cur_dict)
+                self.backtrack(board, x, y, cur_word, cur_dict)
         board[i][j] = tmp
